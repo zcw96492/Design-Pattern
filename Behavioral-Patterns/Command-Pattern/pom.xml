@@ -5,17 +5,17 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <artifactId>Design-Pattern</artifactId>
+        <artifactId>Behavioral-Patterns</artifactId>
         <groupId>com.newcore</groupId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>Behavioral-Patterns</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>Command-Pattern</artifactId>
+    <packaging>jar</packaging>
     <version>1.0.0-SNAPSHOT</version>
 
     <name>${project.artifactId}</name>
-    <description>行为型模式</description>
+    <description>命令模式</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -23,19 +23,4 @@
         <maven.compiler.source>18</maven.compiler.source>
         <maven.compiler.target>18</maven.compiler.target>
     </properties>
-
-    <modules>
-        <module>Observer-Pattern</module>
-        <module>Visitor-Pattern</module>
-        <module>Template-Pattern</module>
-        <module>Strategy-Pattern</module>
-        <module>State-Pattern</module>
-        <module>Memento-Pattern</module>
-        <module>Mediator-Pattern</module>
-        <module>Iterator-Pattern</module>
-        <module>Interpreter-Pattern</module>
-        <module>Command-Pattern</module>
-        <module>Chain-Responsibility-Pattern</module>
-        <module>Null-Object-Pattern</module>
-    </modules>
 </project>

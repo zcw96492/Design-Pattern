@@ -5,17 +5,17 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <artifactId>Design-Pattern</artifactId>
+        <artifactId>Structural-Patterns</artifactId>
         <groupId>com.newcore</groupId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>Structural-Patterns</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>Adapter-Pattern</artifactId>
+    <packaging>jar</packaging>
     <version>1.0.0-SNAPSHOT</version>
 
     <name>${project.artifactId}</name>
-    <description>结构型模式</description>
+    <description>适配器模式</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -23,8 +23,4 @@
         <maven.compiler.source>18</maven.compiler.source>
         <maven.compiler.target>18</maven.compiler.target>
     </properties>
-
-    <modules>
-        <module>Adapter-Pattern</module>
-    </modules>
 </project>

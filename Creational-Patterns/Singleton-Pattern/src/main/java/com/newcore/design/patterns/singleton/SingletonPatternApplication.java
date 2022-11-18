@@ -10,6 +10,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class SingletonPatternApplication {
 
+    /**
+     * 主启动方法
+     * @param args 启动参数
+     */
     public static void main(String[] args) {
         SpringApplication.run(SingletonPatternApplication.class);
     }

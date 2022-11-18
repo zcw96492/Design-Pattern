@@ -8,14 +8,14 @@ import org.slf4j.LoggerFactory;
  * 是否Lazy初始化：否
  * 是否多线程安全：是
  * 实现难度：易
- * @author zhouchaowei
+ * @author Zhou Chaowei
  */
 public class HungryThreadSafeSingleton {
 
     private static final Logger logger = LoggerFactory.getLogger(HungryThreadSafeSingleton.class);
 
     /** 声明饿汉式单例的实例对象 */
-    private static HungryThreadSafeSingleton instance;
+    private static HungryThreadSafeSingleton instance = new HungryThreadSafeSingleton();
 
     /**
      * 构造方法私有化
@@ -23,16 +23,15 @@ public class HungryThreadSafeSingleton {
     private HungryThreadSafeSingleton(){}
 
     /**
-     * 获取实例对象方法(这种方式具备很好的懒加载，能够在多线程中很好的工作。但是，效率很低，99%情况下不需要同步)
-     * 优点：第一次调用才初始化，避免内存浪费。
-     * 缺点：必须加锁 synchronized 才能保证单例，但加锁会影响效率。
-     * 使用场景：getInstance() 的性能对应用程序不是很关键（该方法使用不太频繁）
+     * 获取实例对象方法（这种方式比较常用，但容易产生垃圾对象）
+     * 优点：没有加锁，执行效率会提高。
+     * 缺点：类加载时就初始化，浪费内存。
+     * 使用场景：它基于Classloader机制避免了多线程的同步问题。
+     *         不过，instance在类装载时就实例化，虽然导致类装载的原因有很多种，但是也不能确定有其他的方式（或者其他的静态方法）导致类装载。
+     *         这时候初始化instance显然没有达到懒加载的效果。
      * @return 单例对象
      */
-    public static synchronized HungryThreadSafeSingleton getInstance() {
-        if (instance == null) {
-            instance = new HungryThreadSafeSingleton();
-        }
+    public static HungryThreadSafeSingleton getInstance(){
         return instance;
     }
 }
